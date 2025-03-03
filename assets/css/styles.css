@@ -1,0 +1,262 @@
+:root {
+	--cb-violet: #a98ed6;
+	--cb-violet-dark: #7f54b2;
+	--cb-violet-light: #f6f5ff;
+	--cb-white: #ffffff;
+	--cb-grey: #5f6266;
+	--cb-grey-dark: #2b3337;
+	--cb-grey-light: #cdced1;
+	--cb-violet-ultra-dark: #332148;
+	--cb-success-bg: #dff0d8;
+	--cb-success-border: #d6e9c6;
+	--cb-success-text: #3c763d;
+	--cb-error-bg: #f2dede;
+	--cb-error-border: #ebccd1;
+	--cb-error-text: #a94442;
+	--cb-padding-field: 0 15px;
+	--cb-padding-button: 1px 10px;
+	--cb-padding-button-2: 5px 10px;
+	--cb-big-title: 26px;
+	--cb-small-title: 20px;
+	--cb-normal-text: 14px;
+	--cb-small-text: 12px;
+	--cb-bold-text: 700;
+	--cb-shadow: 0 2px 3px 0 hsla(0,0%,50%,.1);
+	--cb-border: 1px solid var(--cb-grey-light);
+}
+
+.wrap h1 {
+	font-size: var(--cb-big-title);
+	font-weight: var(--cb-bold-text);
+	margin-bottom: 20px;
+}
+
+.wrap span {
+	font-size: var(--cb-small-text);
+	color: var(--cb-grey);
+}
+
+.cbec-header-section h3 {
+	color: var(--cb-grey-dark);
+	font-size: var(--cb-small-title);
+	font-weight: var(--cb-bold-text);
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	margin: 5px 0;
+}
+
+.cbec-header-section p {
+	font-size: var(--cb-normal-text);
+	color: var(--cb-grey);
+}
+
+.cbec-header-icon img {
+	width: 30px;
+	height: auto;
+	vertical-align: middle;
+}
+
+.cbec-content {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+
+.cbec-section {
+	background-color: var(--cb-white);
+	padding: 24px;
+	box-shadow: var(--cb-shadow);
+	border-radius: 8px;
+}
+
+.cbec-content .cbec-section {
+	background-color: var(--cb-white);
+	padding: 24px;
+	box-shadow: var(--cb-shadow);
+	border-radius: 8px;
+	flex: 1 1 40%;
+	box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+	.cbec-content .cbec-section {
+		flex: 1 1 100%;
+	}
+}
+
+.cbec-flex-container {
+	display: flex;
+	align-items: center;
+	margin: 20px 0;
+}
+
+.cbec-flex-item {
+	margin-right: 15px;
+}
+
+.cbec-flex-item:last-child {
+	margin-right: 0;
+}
+
+.form-table th {
+	vertical-align: middle;
+}
+
+/* Prefix input field for phone number */
+input.cbec-input-prefix {
+	max-width: 70px !important;
+}
+
+input.cbec-input-prefix:focus {
+	border-color: var(--cb-violet-dark);
+	outline: none;
+}
+
+input.cbec-input-prefix::placeholder {
+	color: var(--cb-grey-dark);
+	opacity: 1;
+}
+
+/* Phone number input field */
+input.cbec-input-phone {
+	width: 100%;
+	max-width: 190px;
+	padding: 3px;
+	border: 1px solid var(--cb-violet);
+	border-radius: 4px;
+	font-size: var(--cb-normal-text);
+	transition: border-color 0.3s;
+}
+
+/* Message input field */
+input.cbec-input-message,
+input.cbec-input-tooltip-text {
+	max-width: 500px !important;
+}
+
+input.cbec-input-phone:focus,
+input.cbec-input-message:focus {
+	border-color: var(--cb-violet-dark);
+	outline: none;
+}
+
+input.cbec-input-phone::placeholder,
+input.cbec-input-message::placeholder {
+	color: var(--cb-grey-dark);
+	opacity: 1;
+}
+
+/* Field Styles */
+select.cbec-select-position,
+select.cbec-select-show-desktop,
+input[type="time"].cbec-input-time,
+input.cbec-input-icon-color,
+select.cbec-select-icon-type {
+	width: 100%;
+	max-width: 100px;
+	padding: 3px;
+	border: 1px solid var(--cb-violet);
+	border-radius: 4px;
+	font-size: var(--cb-normal-text);
+	transition: border-color 0.3s;
+}
+
+input[type="email"], 
+input[type="text"] {
+	width: 100%;
+	max-width: 200px;
+	padding: 3px;
+	border: 1px solid var(--cb-violet);
+	border-radius: 4px;
+	font-size: var(--cb-normal-text);
+	transition: border-color 0.3s;
+}
+
+/* Button Styles */
+.wp-core-ui .button-primary {
+	background: var(--cb-violet-dark);
+	border-color: var(--cb-violet-dark);
+	color: var(--cb-white);
+	padding: 3px 10px;
+}
+
+.wp-core-ui .button-primary:hover {
+	background: var(--cb-violet);
+	border-color: var(--cb-violet);
+}
+
+.cbec-button-2 {
+	background: var(--cb-violet-dark);
+	border-color: var(--cb-violet-dark);
+	color: var(--cb-white);
+	padding: 3px 10px;
+	border: none;
+	border-radius: 3px;
+}
+
+.cbec-button-2:hover {
+	background: var(--cb-violet);
+	border-color: var(--cb-violet);
+}
+
+/* Range Input Styles */
+input[type="range"] {
+	-webkit-appearance: none;
+	width: 200px;
+	height: 10px;
+	background: var(--cb-white);
+	border: 1px solid var(--cb-violet);
+	outline: none;
+	opacity: 1;
+	transition: opacity 0.2s;
+	border-radius: 5px;
+}
+
+input[type="range"]:hover {
+	opacity: 0.5;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 18px;
+	height: 18px;
+	background: var(--cb-violet-dark);
+	cursor: pointer;
+	border-radius: 50%;
+}
+
+input[type="range"]::-moz-range-thumb {
+	width: 18px;
+	height: 18px;
+	background: var(--cb-violet-dark);
+	cursor: pointer;
+	border-radius: 50%;
+}
+
+/* License Page Styles */
+.cbec-disabled-lib {
+	background-color: var(--cb-error-bg) !important;
+	border-color: var(--cb-error-border) !important;
+	color: var(--cb-error-text) !important;
+	pointer-events: none;
+}
+
+.cbec-enabled-lib {
+	background-color: var(--cb-success-bg)!important;
+	border-color: var(--cb-success-border) !important;
+	color: var(--cb-success-text) !important;
+}
+
+.cbec-php-module-label {
+	display: inline-block;
+	padding: var(--cb-padding-button-2);
+	border: var(--cb-border);
+	border-radius: 3px;
+	background-color: var(--cb-grey-light);
+	color: var(--cb-white);
+	font-size: var(--cb-normal-text);
+	cursor: default;
+	text-align: center;
+}
