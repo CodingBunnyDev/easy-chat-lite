@@ -234,7 +234,6 @@ function cbec_settings() {
 											<option value="coding-bunny-simple-icon.svg" <?php selected( $icon_type, 'coding-bunny-simple-icon.svg' ); ?>><?php esc_html_e( 'Simple', 'coding-bunny-easy-chat-lite' ); ?></option>
 											<option value="coding-bunny-round-icon.svg" <?php selected( $icon_type, 'coding-bunny-round-icon.svg' ); ?>><?php esc_html_e( 'Round', 'coding-bunny-easy-chat-lite' ); ?></option>
 											<option value="coding-bunny-square-icon.svg" <?php selected( $icon_type, 'coding-bunny-square-icon.svg' ); ?>><?php esc_html_e( 'Square', 'coding-bunny-easy-chat-lite' ); ?></option>
-											<option value="coding-bunny-info-icon.svg" <?php selected( $icon_type, 'coding-bunny-info-icon.svg' ); ?>><?php esc_html_e( 'Info', 'coding-bunny-easy-chat-lite' ); ?></option>
 											<option value="coding-bunny-chat-icon-01.svg" <?php selected( $icon_type, 'coding-bunny-chat-icon-01.svg' ); ?>><?php esc_html_e( 'Chat 1', 'coding-bunny-easy-chat-lite' ); ?></option>
 											<option value="coding-bunny-chat-icon-02.svg" <?php selected( $icon_type, 'coding-bunny-chat-icon-02.svg' ); ?>><?php esc_html_e( 'Chat 2', 'coding-bunny-easy-chat-lite' ); ?></option>
 											<option value="coding-bunny-chat-icon-03.svg" <?php selected( $icon_type, 'coding-bunny-chat-icon-03.svg' ); ?>><?php esc_html_e( 'Chat 3', 'coding-bunny-easy-chat-lite' ); ?></option>

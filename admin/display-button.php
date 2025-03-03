@@ -54,7 +54,7 @@ function cbec_lite_button() {
 				if ($file_extension === 'svg') {
 					$icon_svg = file_get_contents($icon_url);
 				} else {
-					$icon_img = '<img src="' . $icon_url . '" alt="WhatsApp Icon" style="width: 100%; height: 100%;">';
+					$icon_img = '<img src="' . esc_url($icon_url) . '" alt="' . esc_attr__('WhatsApp Icon', 'coding-bunny-easy-chat-lite') . '" style="width: 100%; height: 100%;">';
 				}
 			} else {
 				wp_die(esc_html__('Invalid file type.', 'coding-bunny-easy-chat-lite'));
@@ -66,7 +66,7 @@ function cbec_lite_button() {
 				if ($file_extension === 'svg') {
 					$icon_svg = file_get_contents($icon_path);
 				} else {
-					$icon_img = '<img src="' . plugin_dir_url(dirname(__FILE__)) . '/assets/images/' . esc_attr($icon_type) . '" alt="WhatsApp Icon" style="width: 100%; height: 100%;">';
+					$icon_img = '<img src="' . esc_url(plugin_dir_url(dirname(__FILE__)) . 'assets/images/' . esc_attr($icon_type)) . '" alt="' . esc_attr__('WhatsApp Icon', 'coding-bunny-easy-chat-lite') . '" style="width: 100%; height: 100%;">';
 				}
 			}
 		}
@@ -137,13 +137,48 @@ function cbec_lite_button() {
 			</style>
 
 			<!-- WhatsApp link with the message -->
-			<a href="https://wa.me/<?php echo esc_attr($prefix_number); ?><?php echo esc_attr($phone_number); ?>?text=<?php echo urlencode($message); ?>" class="cbec-button" target="_blank" rel="noopener" aria-label="Contact button">
-				<?php echo $icon_svg; ?>
-				<span class="tooltip">
-					<?php echo esc_html($tooltip_text); ?>
-				</span>
-			</a>
-			<?php
-		}
-	}
-	add_action( 'wp_footer', 'cbec_lite_button' );
+			<a href="https://wa.me/<?php echo esc_attr($prefix_number); ?><?php echo esc_attr($phone_number); ?>?text=<?php echo urlencode($message); ?>" class="cbec-button" target="_blank" rel="noopener">
+				<?php 
+
+				// Allow specific SVG tags, attributes, and styles
+				$allowed_svg_tags = [
+					'svg' => [
+					'xmlns' => true,
+					'viewbox' => true,
+					'width' => true,
+					'height' => true,
+					'fill' => true,
+					'class' => true,
+					'aria-hidden' => true,
+					'style' => true,
+					'xmlns:xlink' => true,
+					'xml:space' => true,
+					'xmlns:serif' => true
+				],
+				'g' => [
+				'transform' => true,
+				'id' => true
+			],
+			'path' => [
+			'd' => true,
+			'fill' => true,
+			'class' => true
+		],
+		'circle' => [
+		'cx' => true,
+		'cy' => true,
+		'r' => true,
+		'fill' => true,
+		'class' => true
+		]
+	];
+	echo wp_kses(cbec_lite_sanitize_svg_content($icon_svg), $allowed_svg_tags); 
+	?>
+	<span class="tooltip">
+		<?php echo esc_html($tooltip_text); ?>
+	</span>
+</a>
+<?php
+}
+}
+add_action( 'wp_footer', 'cbec_lite_button' );
