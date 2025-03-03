@@ -44,13 +44,12 @@ function cbec_lite_button() {
 
 		// Set the icon URL based on the selected icon type
 		$icon_svg = '';
-		$icon_img = '';
 		if ($icon_type === 'custom' && !empty(get_option('cbec_custom_icon_url'))) {
 			$icon_url = esc_url(get_option('cbec_custom_icon_url'));
 			$file_extension = pathinfo($icon_url, PATHINFO_EXTENSION);
 
 			// Check if the file extension is allowed
-			$allowed_extensions = ['svg', 'jpeg', 'jpg', 'png', 'webp'];
+			$allowed_extensions = ['svg'];
 			if (in_array($file_extension, $allowed_extensions)) {
 				if ($file_extension === 'svg') {
 					$icon_svg = file_get_contents($icon_url);
@@ -139,13 +138,7 @@ function cbec_lite_button() {
 
 			<!-- WhatsApp link with the message -->
 			<a href="https://wa.me/<?php echo esc_attr($prefix_number); ?><?php echo esc_attr($phone_number); ?>?text=<?php echo urlencode($message); ?>" class="cbec-button" target="_blank" rel="noopener" aria-label="Contact button">
-				<?php
-				if ($icon_svg) {
-					echo $icon_svg; 
-				} else {
-					echo $icon_img;
-				}
-				?>
+				<?php echo $icon_svg; ?>
 				<span class="tooltip">
 					<?php echo esc_html($tooltip_text); ?>
 				</span>
@@ -153,5 +146,4 @@ function cbec_lite_button() {
 			<?php
 		}
 	}
-
 	add_action( 'wp_footer', 'cbec_lite_button' );
